@@ -14,4 +14,3 @@ Mobilon a kártyák vízszintesen, egyesével lapozhatók. A képre koppintva te
 - `styles.css` – arculat és reszponzív nézet
 - `script.js` – a 20 instrukció és galériavezérlés
 - `assets/` – a 20, jelenethez illő, mobilra optimalizált WebP kép
-
