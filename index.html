@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f3eee6">
-  <meta name="description" content="PoseFlow Family – természetes családi fotós instrukciók.">
+  <meta name="description" content="PoseFlow Family – természetes családi és páros fotós instrukciók.">
   <title>PoseFlow Family — JÓZSA / FOTOGRÁFIA</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,11 +18,16 @@
 
   <main id="top">
     <section class="intro" aria-labelledby="title">
-      <p class="kicker">40 egyszerű helyzet</p>
+      <p class="kicker"><span id="scene-total">40</span> egyszerű helyzet</p>
       <h1 id="title">Kevesebb póz.<br><em>Több valódi pillanat.</em></h1>
       <p class="lede">Rövid instrukciók, amiket könnyű kimondani, és még könnyebb megcsinálni.</p>
       <a class="start-link" href="#cards">Kezdjük <span aria-hidden="true">↓</span></a>
     </section>
+
+    <nav class="category-switch" aria-label="Kategória">
+      <button type="button" class="category-button is-active" data-category="family" aria-pressed="true">Család <span>40</span></button>
+      <button type="button" class="category-button" data-category="couples" aria-pressed="false">Párok <span>20</span></button>
+    </nav>
 
     <details class="filter-panel">
       <summary>Szűrés <span id="result-count">40 kártya</span></summary>
@@ -58,7 +63,7 @@
 
   <footer>
     <span>POSEFLOW FAMILY</span>
-    <span>40 / 40</span>
+    <span id="footer-count">40 / 40</span>
   </footer>
 
   <dialog class="lightbox" aria-label="Teljes képernyős képgaléria">
@@ -72,6 +77,6 @@
     <div class="lightbox-count" aria-live="polite"></div>
   </dialog>
 
-  <script src="script.js?v=20261028-1"></script>
+  <script src="script.js?v=20261028-2"></script>
 </body>
 </html>

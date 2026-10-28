@@ -95,3 +95,38 @@ Mind a 40 párosítás külön képfájlt használ.
 - Az Évszak és a Kit fotózol? szűrő együtt, ÉS-kapcsolattal működik.
 - Szűrés után a kártyaszám és a teljes képernyős galéria a látható találatokhoz igazodik.
 - Mobilon a kártyák továbbra is egyesével, vízszintesen lapozhatók.
+
+## Párok kategória — képenkénti audit
+
+Mind a 20 páros kártya külön, álló 4:5 arányú WebP képfájlt használ; egyik sem a kollázsból kivágott részlet.
+
+| # | Cím | Ellenőrzött képi jelenet | Címke |
+|---:|---|---|---|
+| 01 | Kocc! | Egymás mellett sétáló pár, játékos közelség | Ősz |
+| 02 | Egy pillanatra | Egymás felé fordulva megállnak és egymásra néznek | Nyár |
+| 03 | Hátulról átölelve | A férfi hátulról, lazán átöleli a nőt | Ősz |
+| 04 | Csak egy titok | A férfi a nő fülébe súg, a nő nevet | Tavasz |
+| 05 | Egymás mellett | Közel ülnek, a válluk összeér | Ősz |
+| 06 | Húzd magadhoz! | Kézfogás és finom közelebb húzás | Tavasz |
+| 07 | Homlok a homlokhoz | Összeérő homlok, nyugodt közelség | Nyár |
+| 08 | A válladon | A nő a férfi vállára hajtja a fejét | Ősz |
+| 09 | Fordulj vissza! | Kézen fogva haladnak, a nő természetesen visszanéz | Ősz |
+| 10 | Tánclépés | Kézen fogva lassú fordulatot tesznek | Nyár |
+| 11 | Kéz a kézben | Egymással szemben, ellazult vállal fogják egymás kezét | Tél |
+| 12 | Ne engedd el! | A férfi elindul, a nő hátramarad és elölről látszik; tartják egymás kezét | Ősz |
+| 13 | Egy kis igazítás | A nő megigazítja a férfi gallérját/nyakkendőjét | Tél |
+| 14 | Együtt nevetni | Egymást megnevettető pár | Tavasz |
+| 15 | Közel, de nem túl | Egymás mellett állnak, enyhén egymás felé fordulva | Nyár |
+| 16 | Orr az orrhoz | Finoman összeérintik az orrukat | Tél |
+| 17 | Közös kilátás | Háttal, azonos irányba nézve, kézen fogva állnak | Ősz |
+| 18 | A kedvenc helyed | A nő a férfi vállán/mellkasán pihen | Beltér |
+| 19 | Egy kis bolondozás | Mindketten talajon állva játékosan kibillentik egymást | Ősz |
+| 20 | Csak ti ketten | Otthoni kanapén természetesen összebújnak | Beltér |
+
+## Kategória- és szűrési ellenőrzés
+
+- A Család és Párok választó egyszerre csak egy adatkészletet jelenít meg.
+- Kategóriaváltáskor az évszak- és szereplőszűrők alaphelyzetbe állnak, ezért nincs rejtett, korábbi szűrésből maradt állapot.
+- A Párok kategóriában a családi szereplőszűrő nem jelenik meg; családi találat nem keveredhet a páros képek közé.
+- A kártyaszám, a találatszám és a teljes képernyős galéria az aktív kategóriához és szűréshez igazodik.
+- Mobilon mindkét kategória kártyái egyesével, vízszintesen lapozhatók.

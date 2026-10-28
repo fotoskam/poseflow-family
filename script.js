@@ -1,4 +1,4 @@
-const scenes = [
+const familyScenes = [
   ['Sétáljatok lassan, kézen fogva.', 'Nyugodtan, egymás tempójában.', ['nyar'], ['csalad']],
   ['Súgj valamit anya fülébe!', 'Takard el a szádat a kezeddel.', ['nyar'], ['szulo-gyerek']],
   ['Apa, súgj valami vicceset a fülébe!', 'Csak ő hallhatja.', ['nyar'], ['szulo-gyerek']],
@@ -41,18 +41,57 @@ const scenes = [
   ['Közös mese', 'Bújjatok közelebb egymáshoz, és nézzétek meg együtt a könyvet!', ['belter'], ['szulo-gyerek']]
 ].map(([title, instruction, seasons, subjects, extension = 'webp'], index) => ({ id: index + 1, title, instruction, seasons, subjects, extension }));
 
+const coupleScenes = [
+  ['Kocc!', 'Sétáljatok egymás mellett, és finoman koccintsátok össze a csípőtöket!', ['osz']],
+  ['Egy pillanatra', 'Álljatok meg, forduljatok egymás felé, és maradjatok így egy kicsit!', ['nyar']],
+  ['Hátulról átölelve', 'Állj mögé, öleld át lazán, te pedig dőlj egy kicsit hátra!', ['osz']],
+  ['Csak egy titok', 'Súgj valamit a fülébe, amit én nem hallhatok!', ['tavasz']],
+  ['Egymás mellett', 'Üljetek le egymás mellé, olyan közel, hogy összeérjen a vállatok!', ['osz']],
+  ['Húzd magadhoz!', 'Fogd meg a kezét, és húzd finoman egy kicsit közelebb!', ['tavasz']],
+  ['Homlok a homlokhoz', 'Lépjetek közelebb, érintsétek össze a homlokotokat, és maradjatok így!', ['nyar']],
+  ['A válladon', 'Hajtsd a fejed a vállára, te pedig fordulj felé egy picit!', ['osz']],
+  ['Fordulj vissza!', 'Induljatok el kézen fogva, aztán nézzetek vissza rám!', ['osz']],
+  ['Tánclépés', 'Fogjátok meg egymást, és forduljatok egy lassút, mintha táncolnátok!', ['nyar']],
+  ['Kéz a kézben', 'Álljatok egymással szemben, fogjátok meg mindkét kezeteket, és lazítsátok el a vállatokat!', ['tel']],
+  ['Ne engedd el!', 'Indulj el lassan, te pedig maradj egy pillanatra, és tartsd a kezét!', ['osz']],
+  ['Egy kis igazítás', 'Igazítsd meg a gallérját vagy a ruháját, mintha most indulnátok valahová!', ['tel']],
+  ['Együtt nevetni', 'Próbáljátok meg egymást megnevettetni, de engem most hagyjatok ki!', ['tavasz']],
+  ['Közel, de nem túl', 'Álljatok egymás mellé, forduljatok picit egymás felé, és nézzetek rám!', ['nyar']],
+  ['Orr az orrhoz', 'Érintsétek össze finoman az orrotokat, aztán nézzetek egymásra!', ['tel']],
+  ['Közös kilátás', 'Álljatok egymás mellé, nézzetek ugyanabba az irányba, és fogjátok meg egymás kezét!', ['osz']],
+  ['A kedvenc helyed', 'Tedd a fejed oda a vállára vagy a mellkasára, ahol a legkényelmesebb!', ['belter']],
+  ['Egy kis bolondozás', 'Próbáljátok meg finoman kibillenteni egymást az egyensúlyból, de a lábatok maradjon a földön!', ['osz']],
+  ['Csak ti ketten', 'Öleljétek át egymást úgy, ahogy máskor szoktatok. Most ne foglalkozzatok velem!', ['belter']]
+].map(([title, instruction, seasons], index) => ({
+  id: index + 1,
+  title,
+  instruction,
+  seasons,
+  subjects: ['parok'],
+  extension: 'webp',
+  category: 'couples'
+}));
+
+familyScenes.forEach(scene => { scene.category = 'family'; });
+
 const cards = document.querySelector('#cards');
 const resultCount = document.querySelector('#result-count');
 const filterForm = document.querySelector('#filters');
+const categoryButtons = [...document.querySelectorAll('.category-button')];
+const subjectFilter = filterForm.elements.subject.closest('label');
+const sceneTotal = document.querySelector('#scene-total');
+const footerCount = document.querySelector('#footer-count');
 const modal = document.querySelector('.lightbox');
 const modalImage = modal.querySelector('img');
 const modalCaption = modal.querySelector('figcaption');
 const modalCount = modal.querySelector('.lightbox-count');
-let visibleScenes = [...scenes];
+let activeCategory = 'family';
+let visibleScenes = [...familyScenes];
 let current = 0;
 
 function imagePath(scene) {
-  return `assets/scene-${String(scene.id).padStart(2, '0')}.${scene.extension}`;
+  const prefix = scene.category === 'couples' ? 'couple' : 'scene';
+  return `assets/${prefix}-${String(scene.id).padStart(2, '0')}.${scene.extension}`;
 }
 
 function renderCards() {
@@ -67,29 +106,49 @@ function renderCards() {
     const article = document.createElement('article');
     article.className = 'card';
     const n = String(scene.id).padStart(2, '0');
+    const total = activeCategory === 'couples' ? coupleScenes.length : familyScenes.length;
     article.innerHTML = `
       <button class="image-button" type="button" data-index="${visibleIndex}" aria-label="${n}. kép megnyitása teljes képernyőn">
         <img src="${imagePath(scene)}" alt="${scene.title}: ${scene.instruction}" loading="${visibleIndex < 2 ? 'eager' : 'lazy'}" decoding="async">
       </button>
       <div class="card-copy">
-        <p class="card-number">${n} / 40</p>
+        <p class="card-number">${n} / ${total}</p>
         <h2>${scene.title}</h2>
         <small>${scene.instruction}</small>
       </div>`;
     cards.append(article);
   });
   resultCount.textContent = `${visibleScenes.length} kártya`;
+  const total = activeCategory === 'couples' ? coupleScenes.length : familyScenes.length;
+  footerCount.textContent = `${visibleScenes.length} / ${total}`;
   cards.scrollLeft = 0;
 }
 
 function applyFilters() {
   const season = filterForm.elements.season.value;
   const subject = filterForm.elements.subject.value;
-  visibleScenes = scenes.filter(scene =>
+  const source = activeCategory === 'couples' ? coupleScenes : familyScenes;
+  visibleScenes = source.filter(scene =>
     (season === 'mind' || scene.seasons.includes(season)) &&
-    (subject === 'mind' || scene.subjects.includes(subject))
+    (activeCategory === 'couples' || subject === 'mind' || scene.subjects.includes(subject))
   );
   renderCards();
+}
+
+function setCategory(category) {
+  activeCategory = category;
+  categoryButtons.forEach(button => {
+    const selected = button.dataset.category === category;
+    button.classList.toggle('is-active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+  subjectFilter.hidden = category === 'couples';
+  filterForm.elements.subject.value = 'mind';
+  filterForm.elements.season.value = 'mind';
+  const total = category === 'couples' ? coupleScenes.length : familyScenes.length;
+  sceneTotal.textContent = total;
+  footerCount.textContent = `${total} / ${total}`;
+  applyFilters();
 }
 
 function show(index) {
@@ -103,6 +162,7 @@ function show(index) {
 }
 
 filterForm.addEventListener('change', applyFilters);
+categoryButtons.forEach(button => button.addEventListener('click', () => setCategory(button.dataset.category)));
 cards.addEventListener('click', event => {
   const button = event.target.closest('.image-button');
   if (!button) return;
