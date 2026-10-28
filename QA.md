@@ -1,5 +1,52 @@
 # Kép–instrukció és működés ellenőrzés
 
+## Képenkénti besorolási audit
+
+A címkék a fotón ténylegesen látható környezetet és szereplőket követik. A „Beltér” nem évszakpótló címke: csak valódi belső térben készült kép kapta meg.
+
+| # | Látható környezet | Évszak / helyszín | Szereplők |
+|---:|---|---|---|
+| 01 | napos, száraz virágos rét | Nyár | Család |
+| 02 | zöld, virágos rét | Nyár | Szülő + gyerek |
+| 03 | zöld rét, meleg napfény | Nyár | Szülő + gyerek |
+| 04 | üde, virágos gyep | Tavasz, Nyár | Testvérek |
+| 05 | napos rét | Nyár | Család |
+| 06 | szárazodó rét, átmeneti öltözet | Nyár, Ősz | Család |
+| 07 | virágos rét | Nyár | Család |
+| 08 | élénkzöld gyep | Tavasz, Nyár | Család |
+| 09 | színes lomb és avar | Ősz | Testvérek |
+| 10 | virágos rét | Nyár | Család |
+| 11 | napos rét | Nyár | Család |
+| 12 | zöld rét | Nyár | Szülő + gyerek |
+| 13 | virágos rét | Tavasz, Nyár | Család |
+| 14 | száraz, napos rét | Nyár | Szülő + gyerek |
+| 15 | hegyi virágos rét | Nyár | Testvérek |
+| 16 | virágzó rét | Tavasz, Nyár | Szülő + gyerek |
+| 17 | napos rét, piknik | Nyár | Család |
+| 18 | üde zöld mező | Tavasz, Nyár | Család |
+| 19 | napos rét | Nyár | Testvérek |
+| 20 | fűben fekvő család | Nyár | Család |
+| 21 | narancs lomb és avar | Ősz | Gyerek |
+| 22 | sárga lomb és avar | Ősz | Gyerek |
+| 23 | őszi erdő, avar | Ősz | Szülő + gyerek |
+| 24 | kanapé egy lakásban | Beltér | Szülő + gyerek |
+| 25 | sárga lomb, őszi levél | Ősz | Gyerek |
+| 26 | őszi erdő, meleg kabát | Ősz | Szülő + gyerek |
+| 27 | kanapé, beltéri részlet | Beltér | Szülő + gyerek |
+| 28 | őszi erdő és avar | Ősz | Testvérek |
+| 29 | őszi avar | Ősz | Gyerek |
+| 30 | virágzó fák és tavaszi virágok | Tavasz | Szülő + gyerek |
+| 31 | havas erdő | Tél | Gyerek |
+| 32 | lakás ablaka, kint hó | Tél, Beltér | Gyerek |
+| 33 | takarósátor egy szobában | Beltér | Testvérek |
+| 34 | narancs lomb és avar | Ősz | Család |
+| 35 | tócsa, lomb nélküli átmeneti táj | Tavasz, Ősz | Gyerek |
+| 36 | pitypang és üde növényzet | Tavasz | Szülő + gyerek |
+| 37 | sárga lomb és avar | Ősz | Gyerek |
+| 38 | levélzápor őszi erdőben | Ősz | Család |
+| 39 | őszi erdő és avar | Ősz | Testvérek |
+| 40 | kanapé egy lakásban | Beltér | Szülő + gyerek |
+
 Mind a 40 párosítás külön képfájlt használ.
 
 1. Kézen fogva sétáló család; nincs kért nevetés.

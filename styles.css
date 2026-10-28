@@ -104,6 +104,14 @@ h1 em { color: var(--sage); font-weight: 400; }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+
+.empty-state {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 72px 24px;
+  text-align: center;
+  color: var(--muted);
+}
 .card {
   min-width: 0;
   background: var(--paper);
@@ -178,6 +186,11 @@ footer { display: flex; justify-content: space-between; padding: 32px clamp(20px
     scrollbar-width: none;
     background: var(--paper);
     gap: 0;
+  }
+
+  .empty-state {
+    flex: 0 0 100vw;
+    padding: 72px 24px;
   }
   .cards::-webkit-scrollbar { display: none; }
   .card {

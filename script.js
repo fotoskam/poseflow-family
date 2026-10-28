@@ -1,44 +1,44 @@
 const scenes = [
-  ['Sétáljatok lassan, kézen fogva.', 'Nyugodtan, egymás tempójában.', ['tavasz', 'nyar', 'osz'], ['csalad']],
-  ['Súgj valamit anya fülébe!', 'Takard el a szádat a kezeddel.', ['tavasz', 'nyar', 'osz', 'belter'], ['szulo-gyerek']],
-  ['Apa, súgj valami vicceset a fülébe!', 'Csak ő hallhatja.', ['tavasz', 'nyar', 'osz', 'belter'], ['szulo-gyerek']],
-  ['Guggoljatok le! Mit találtatok?', 'Mutassátok meg egymásnak.', ['tavasz', 'nyar', 'osz'], ['testverek']],
-  ['Bújjatok össze egy nagy ölelésre!', 'Mindenki mindenkit.', ['tavasz', 'nyar', 'osz', 'tel', 'belter'], ['csalad']],
-  ['Ülj fel apa vállára!', 'Fogjátok egymás kezét.', ['tavasz', 'nyar', 'osz'], ['szulo-gyerek']],
-  ['Anya, pördítsd meg egyszer!', 'Lassan, kézen fogva.', ['tavasz', 'nyar', 'osz'], ['szulo-gyerek']],
-  ['Fussatok anya és apa karjába!', 'Ők már várnak benneteket.', ['tavasz', 'nyar', 'osz'], ['csalad']],
-  ['Kocc!', 'Sétáljatok egymás mellett, és háromra finoman koccintsátok össze a csípőtöket!', ['tavasz', 'nyar', 'osz'], ['testverek']],
-  ['Bújjatok el mögöttük — aztán kukucs!', 'Két oldalról lessetek ki.', ['tavasz', 'nyar', 'osz'], ['csalad']],
-  ['Anya, csikizd meg egy kicsit!', 'Csak finoman, az oldalán.', ['tavasz', 'nyar', 'osz', 'belter'], ['szulo-gyerek']],
-  ['Érintsétek össze az orrotokat!', 'Nézzetek egymás szemébe.', ['tavasz', 'nyar', 'osz', 'belter'], ['szulo-gyerek']],
-  ['Mutassátok meg a tapsolós játékot!', 'A szülők csak figyelnek.', ['tavasz', 'nyar', 'osz', 'belter'], ['csalad']],
-  ['Apa, emeld fel magasra!', 'Tartsd biztosan, két kézzel.', ['tavasz', 'nyar', 'osz'], ['szulo-gyerek']],
-  ['Álljatok háttal egymásnak!', 'Nézzetek oldalra a másikra.', ['tavasz', 'nyar', 'osz', 'belter'], ['testverek']],
+  ['Sétáljatok lassan, kézen fogva.', 'Nyugodtan, egymás tempójában.', ['nyar'], ['csalad']],
+  ['Súgj valamit anya fülébe!', 'Takard el a szádat a kezeddel.', ['nyar'], ['szulo-gyerek']],
+  ['Apa, súgj valami vicceset a fülébe!', 'Csak ő hallhatja.', ['nyar'], ['szulo-gyerek']],
+  ['Guggoljatok le! Mit találtatok?', 'Mutassátok meg egymásnak.', ['tavasz', 'nyar'], ['testverek']],
+  ['Bújjatok össze egy nagy ölelésre!', 'Mindenki mindenkit.', ['nyar'], ['csalad']],
+  ['Ülj fel apa vállára!', 'Fogjátok egymás kezét.', ['nyar', 'osz'], ['csalad']],
+  ['Anya, pördítsd meg egyszer!', 'Lassan, kézen fogva.', ['nyar'], ['csalad']],
+  ['Fussatok anya és apa karjába!', 'Ők már várnak benneteket.', ['tavasz', 'nyar'], ['csalad']],
+  ['Kocc!', 'Sétáljatok egymás mellett, és háromra finoman koccintsátok össze a csípőtöket!', ['osz'], ['testverek']],
+  ['Bújjatok el mögöttük — aztán kukucs!', 'Két oldalról lessetek ki.', ['nyar'], ['csalad']],
+  ['Anya, csikizd meg egy kicsit!', 'Csak finoman, az oldalán.', ['nyar'], ['csalad']],
+  ['Érintsétek össze az orrotokat!', 'Nézzetek egymás szemébe.', ['nyar'], ['szulo-gyerek']],
+  ['Mutassátok meg a tapsolós játékot!', 'A szülők csak figyelnek.', ['tavasz', 'nyar'], ['csalad']],
+  ['Apa, emeld fel magasra!', 'Tartsd biztosan, két kézzel.', ['nyar'], ['szulo-gyerek']],
+  ['Álljatok háttal egymásnak!', 'Nézzetek oldalra a másikra.', ['nyar'], ['testverek']],
   ['Adj anyának egy virágot!', 'Várd meg, míg átveszi.', ['tavasz', 'nyar'], ['szulo-gyerek']],
-  ['Üljetek egészen közel!', 'Dőljetek egymásnak.', ['tavasz', 'nyar', 'osz', 'tel', 'belter'], ['csalad']],
-  ['Menjetek pontosan apa nyomában!', 'Libasorban, lépésről lépésre.', ['tavasz', 'nyar', 'osz', 'tel'], ['csalad']],
-  ['Repüljetek, mint a repülők!', 'Karok oldalra, szárnyként.', ['tavasz', 'nyar', 'osz'], ['gyerek', 'testverek']],
-  ['Feküdjetek össze, fejjel középre!', 'Minden arc legyen közel.', ['tavasz', 'nyar', 'osz', 'belter'], ['csalad']],
+  ['Üljetek egészen közel!', 'Dőljetek egymásnak.', ['nyar'], ['csalad']],
+  ['Menjetek pontosan apa nyomában!', 'Libasorban, lépésről lépésre.', ['tavasz', 'nyar'], ['csalad']],
+  ['Repüljetek, mint a repülők!', 'Karok oldalra, szárnyként.', ['nyar'], ['testverek']],
+  ['Feküdjetek össze, fejjel középre!', 'Minden arc legyen közel.', ['nyar'], ['csalad']],
   ['Lógó lábak', 'Ülj fel ide, hagyd lógni a lábad, és nézz le egy pillanatra!', ['osz'], ['gyerek']],
   ['A fánál', 'Támaszkodj a fának, tedd kényelmesen a kezed, és nézz rám!', ['osz'], ['gyerek']],
   ['Nézzünk körül!', 'Üljetek egymás mellé, és nézzetek arra, amerre apa mutat!', ['osz'], ['szulo-gyerek']],
-  ['Vállra hajtva', 'Hajtsd a fejed anya vállára, és maradjatok így egy kicsit!', ['osz'], ['szulo-gyerek']],
+  ['Vállra hajtva', 'Hajtsd a fejed anya vállára, és maradjatok így egy kicsit!', ['belter'], ['szulo-gyerek']],
   ['A kis kincs', 'Tartsd a kezedben, amit találtál, és mutasd meg nekem!', ['osz'], ['gyerek']],
-  ['Igazítsd meg!', 'Apa, igazítsd meg egy kicsit a kabátját!', ['osz', 'tel'], ['szulo-gyerek']],
-  ['Összekulcsolt kezek', 'Fogjátok meg egymás kezét, és tegyétek az öletekbe!', ['osz', 'belter'], ['szulo-gyerek']],
-  ['Testvéri közelség', 'Üljetek egymás mellé. Hajtsd a fejed a tesód vállára!', ['osz', 'belter'], ['testverek']],
+  ['Igazítsd meg!', 'Apa, igazítsd meg egy kicsit a kabátját!', ['osz'], ['szulo-gyerek']],
+  ['Összekulcsolt kezek', 'Fogjátok meg egymás kezét, és tegyétek az öletekbe!', ['belter'], ['szulo-gyerek']],
+  ['Testvéri közelség', 'Üljetek egymás mellé. Hajtsd a fejed a tesód vállára!', ['osz'], ['testverek']],
   ['Közelebbről', 'Guggolj le, és nézd meg közelről, mit találtál!', ['osz'], ['gyerek']],
-  ['Hajsimítás', 'Anya, simítsd ki a haját az arcából!', ['osz', 'belter'], ['szulo-gyerek']],
+  ['Hajsimítás', 'Anya, simítsd ki a haját az arcából!', ['tavasz'], ['szulo-gyerek']],
   ['Hó a kézben', 'Mutasd meg, milyen hópelyheket gyűjtöttél!', ['tel'], ['gyerek']],
   ['Kukucskálj ki!', 'Ülj az ablakhoz, és nézd meg, mi történik odakint!', ['tel', 'belter'], ['gyerek']],
   ['Sátorozás', 'Bújjatok a takaró alá, és világítsatok zseblámpával!', ['belter'], ['testverek']],
-  ['Hátulról', 'Fogjátok meg a kezét, és sétáljatok előre!', ['tavasz', 'nyar', 'osz'], ['csalad']],
+  ['Hátulról', 'Fogjátok meg a kezét, és sétáljatok előre!', ['osz'], ['csalad']],
   ['Tócsában', 'Ugorj egyet a tócsába!', ['tavasz', 'osz'], ['gyerek']],
-  ['Fújjuk el!', 'Fújjatok a pitypangra, és nézzétek, merre száll!', ['tavasz', 'nyar'], ['szulo-gyerek']],
-  ['Bújócska', 'Bújj a fa mögé, és kukucskálj ki csak az egyik oldalon!', ['tavasz', 'nyar', 'osz'], ['gyerek']],
+  ['Fújjuk el!', 'Fújjatok a pitypangra, és nézzétek, merre száll!', ['tavasz'], ['szulo-gyerek']],
+  ['Bújócska', 'Bújj a fa mögé, és kukucskálj ki csak az egyik oldalon!', ['osz'], ['gyerek']],
   ['Levélzápor', 'Gyűjtsetek leveleket, és dobjátok fel egyszerre!', ['osz'], ['csalad']],
-  ['Súgj egy titkot!', 'Súgj valamit a tesód fülébe, amit más nem hallhat!', ['osz', 'belter'], ['testverek']],
-  ['Közös mese', 'Bújjatok közelebb egymáshoz, és nézzétek meg együtt a könyvet!', ['belter'], ['csalad', 'szulo-gyerek']]
+  ['Súgj egy titkot!', 'Súgj valamit a tesód fülébe, amit más nem hallhat!', ['osz'], ['testverek']],
+  ['Közös mese', 'Bújjatok közelebb egymáshoz, és nézzétek meg együtt a könyvet!', ['belter'], ['szulo-gyerek']]
 ].map(([title, instruction, seasons, subjects, extension = 'webp'], index) => ({ id: index + 1, title, instruction, seasons, subjects, extension }));
 
 const cards = document.querySelector('#cards');
@@ -57,6 +57,12 @@ function imagePath(scene) {
 
 function renderCards() {
   cards.replaceChildren();
+  if (!visibleScenes.length) {
+    const empty = document.createElement('p');
+    empty.className = 'empty-state';
+    empty.textContent = 'Ehhez a párosításhoz nincs fotó.';
+    cards.append(empty);
+  }
   visibleScenes.forEach((scene, visibleIndex) => {
     const article = document.createElement('article');
     article.className = 'card';
