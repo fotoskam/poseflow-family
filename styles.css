@@ -60,6 +60,42 @@ h1 em { color: var(--sage); font-weight: 400; }
 .lede { max-width: 500px; margin: 34px 0; color: var(--muted); line-height: 1.65; }
 .start-link { color: var(--ink); text-decoration: none; border-bottom: 1px solid; padding-bottom: 5px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
 
+.filter-panel {
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  padding: 0 clamp(20px, 5vw, 72px);
+}
+.filter-panel summary {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.filter-panel summary::marker { color: var(--sage); }
+.filter-panel summary span { margin-left: auto; color: var(--muted); font-weight: 400; }
+.filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 260px));
+  gap: 18px;
+  padding: 0 0 24px;
+}
+.filters label { display: grid; gap: 8px; color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+.filters select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0 12px;
+  font: inherit;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -131,6 +167,9 @@ footer { display: flex; justify-content: space-between; padding: 32px clamp(20px
   .eyebrow { display: none; }
   .intro { min-height: 62dvh; padding: 56px 20px; }
   h1 { font-size: clamp(43px, 14vw, 66px); }
+  .filter-panel { position: sticky; top: 0; z-index: 4; padding: 0 16px; box-shadow: 0 1px 0 var(--line); }
+  .filter-panel summary { min-height: 52px; }
+  .filters { grid-template-columns: 1fr; gap: 12px; padding-bottom: 16px; }
   .cards {
     display: flex;
     overflow-x: auto;

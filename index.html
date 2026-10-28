@@ -18,11 +18,38 @@
 
   <main id="top">
     <section class="intro" aria-labelledby="title">
-      <p class="kicker">20 egyszerű helyzet</p>
+      <p class="kicker">40 egyszerű helyzet</p>
       <h1 id="title">Kevesebb póz.<br><em>Több valódi pillanat.</em></h1>
       <p class="lede">Rövid instrukciók, amiket könnyű kimondani, és még könnyebb megcsinálni.</p>
       <a class="start-link" href="#cards">Kezdjük <span aria-hidden="true">↓</span></a>
     </section>
+
+    <details class="filter-panel">
+      <summary>Szűrés <span id="result-count">40 kártya</span></summary>
+      <form id="filters" class="filters">
+        <label>
+          <span>Évszak</span>
+          <select name="season">
+            <option value="mind">Mind</option>
+            <option value="tavasz">Tavasz</option>
+            <option value="nyar">Nyár</option>
+            <option value="osz">Ősz</option>
+            <option value="tel">Tél</option>
+            <option value="belter">Beltér</option>
+          </select>
+        </label>
+        <label>
+          <span>Kit fotózol?</span>
+          <select name="subject">
+            <option value="mind">Mind</option>
+            <option value="csalad">Család</option>
+            <option value="szulo-gyerek">Szülő + gyerek</option>
+            <option value="testverek">Testvérek</option>
+            <option value="gyerek">Gyerek</option>
+          </select>
+        </label>
+      </form>
+    </details>
 
     <section id="cards" class="cards" aria-label="Fotós instrukciók">
       <!-- A kártyákat a script tölti fel. -->
@@ -31,7 +58,7 @@
 
   <footer>
     <span>POSEFLOW FAMILY</span>
-    <span>20 / 20</span>
+    <span>40 / 40</span>
   </footer>
 
   <dialog class="lightbox" aria-label="Teljes képernyős képgaléria">
