@@ -72,6 +72,36 @@ const coupleScenes = [
   category: 'couples'
 }));
 
+const christmasScenes = [
+  [1, 'Klasszikus portré', 'Ülj a székre, tedd a kezed az öledbe, és nézz rám!'],
+  [3, 'Oldalra ülés', 'Fordulj kicsit oldalra a széken, tedd a kezed a térdedre, és fordítsd felém az arcod!'],
+  [4, 'Laza ülés', 'Ülj oldalasan, húzd fel az egyik lábad, öleld át lazán, és nézz rám!'],
+  [6, 'Könyöktámasz', 'Ülj le, támaszd az egyik könyököd a térdedre, az állad pedig a kezedre! A másik kezed pihenjen a combodon.'],
+  [7, 'Ajándékkal az ölben', 'Fogd az ajándékot az öledbe, öleld át finoman, és nézz rám!'],
+  [14, 'Előredőlés', 'Ülj a székre, könyökölj a térdedre, tedd az állad a két kezedre, és nézz a kamerába!'],
+  [2, 'Könyöklés a háttámlán', 'Ülj fordítva a székre, tedd a két alkarod a háttámla tetejére, és pihentesd rajtuk az állad!'],
+  [11, 'Támlára könyöklés', 'Állj a szék mögé, könyökölj a háttámlára, tedd az állad a kezedre, és nézz rám!'],
+  [12, 'Átkarolt háttámla', 'Ülj fordítva a székre, öleld át a háttámlát mindkét karoddal, és nézz rám!'],
+  [8, 'Támaszkodás a székre', 'Állj a szék mellé, tedd az egyik kezed a háttámlára, és fordulj kicsit felém!'],
+  [9, 'Ajándékkal a széknél', 'Állj a szék mellé, tedd az ajándékot az ülőlapra, pihentesd rajta a kezed, és nézz rám!'],
+  [15, 'Szék mellett álló portré', 'Állj a szék mellé, fogd meg lazán a háttámlát, fordulj kicsit oldalra, és nézz rám!'],
+  [10, 'Keresztbe állás', 'Állj lazán, tedd egyik lábad a másik elé, és nézz a kamerába!'],
+  [16, 'Karba tett kéz', 'Állj egyenesen, tedd karba a kezed, fordítsd kissé oldalra a vállad, és nézz rám!'],
+  [18, 'Oldalra fordulva', 'Fordulj kicsit oldalra, tedd az egyik kezed a csípődre, a másik pihenjen lazán, és nézz rám!'],
+  [17, 'Ajándékkal állva', 'Állj egyenesen, fogd az ajándékot két kézzel magad előtt, és mosolyogj!'],
+  [20, 'Karácsonyi fatáblával', 'Fogd két kézzel a „Boldog karácsonyt” feliratú fatáblát a mellkasod előtt, és nézz rám!'],
+  [19, 'Játékos tartás', 'Állj lazán, fordulj kicsit oldalra, és mozdulj egy játékosat!']
+].map(([originalId, title, instruction], index) => ({
+  id: index + 1,
+  originalId,
+  title,
+  instruction,
+  seasons: ['tel', 'belter'],
+  subjects: ['gyerek'],
+  extension: 'png',
+  category: 'christmas'
+}));
+
 familyScenes.forEach(scene => { scene.category = 'family'; });
 
 const cards = document.querySelector('#cards');
@@ -79,6 +109,7 @@ const resultCount = document.querySelector('#result-count');
 const filterForm = document.querySelector('#filters');
 const categoryButtons = [...document.querySelectorAll('.category-button')];
 const subjectFilter = filterForm.elements.subject.closest('label');
+const filterPanel = document.querySelector('.filter-panel');
 const sceneTotal = document.querySelector('#scene-total');
 const footerCount = document.querySelector('#footer-count');
 const modal = document.querySelector('.lightbox');
@@ -90,8 +121,17 @@ let visibleScenes = [...familyScenes];
 let current = 0;
 
 function imagePath(scene) {
+  if (scene.category === 'christmas') {
+    return `assets/christmas-${String(scene.id).padStart(2, '0')}-orig-${String(scene.originalId).padStart(2, '0')}.${scene.extension}`;
+  }
   const prefix = scene.category === 'couples' ? 'couple' : 'scene';
   return `assets/${prefix}-${String(scene.id).padStart(2, '0')}.${scene.extension}`;
+}
+
+function scenesFor(category) {
+  if (category === 'couples') return coupleScenes;
+  if (category === 'christmas') return christmasScenes;
+  return familyScenes;
 }
 
 function renderCards() {
@@ -106,7 +146,7 @@ function renderCards() {
     const article = document.createElement('article');
     article.className = 'card';
     const n = String(scene.id).padStart(2, '0');
-    const total = activeCategory === 'couples' ? coupleScenes.length : familyScenes.length;
+    const total = scenesFor(activeCategory).length;
     article.innerHTML = `
       <button class="image-button" type="button" data-index="${visibleIndex}" aria-label="${n}. kép megnyitása teljes képernyőn">
         <img src="${imagePath(scene)}" alt="${scene.title}: ${scene.instruction}" loading="${visibleIndex < 2 ? 'eager' : 'lazy'}" decoding="async">
@@ -119,7 +159,7 @@ function renderCards() {
     cards.append(article);
   });
   resultCount.textContent = `${visibleScenes.length} kártya`;
-  const total = activeCategory === 'couples' ? coupleScenes.length : familyScenes.length;
+  const total = scenesFor(activeCategory).length;
   footerCount.textContent = `${visibleScenes.length} / ${total}`;
   cards.scrollLeft = 0;
 }
@@ -127,10 +167,10 @@ function renderCards() {
 function applyFilters() {
   const season = filterForm.elements.season.value;
   const subject = filterForm.elements.subject.value;
-  const source = activeCategory === 'couples' ? coupleScenes : familyScenes;
+  const source = scenesFor(activeCategory);
   visibleScenes = source.filter(scene =>
-    (season === 'mind' || scene.seasons.includes(season)) &&
-    (activeCategory === 'couples' || subject === 'mind' || scene.subjects.includes(subject))
+    (activeCategory === 'christmas' || season === 'mind' || scene.seasons.includes(season)) &&
+    (activeCategory !== 'family' || subject === 'mind' || scene.subjects.includes(subject))
   );
   renderCards();
 }
@@ -143,9 +183,10 @@ function setCategory(category) {
     button.setAttribute('aria-pressed', String(selected));
   });
   subjectFilter.hidden = category === 'couples';
+  filterPanel.hidden = category === 'christmas';
   filterForm.elements.subject.value = 'mind';
   filterForm.elements.season.value = 'mind';
-  const total = category === 'couples' ? coupleScenes.length : familyScenes.length;
+  const total = scenesFor(category).length;
   sceneTotal.textContent = total;
   footerCount.textContent = `${total} / ${total}`;
   applyFilters();
