@@ -78,6 +78,7 @@ const christmasScenes = [
   [4, 'Laza ülés', 'Ülj oldalasan, húzd fel az egyik lábad, öleld át lazán, és nézz rám!'],
   [6, 'Könyöktámasz', 'Ülj le, támaszd az egyik könyököd a térdedre, az állad pedig a kezedre! A másik kezed pihenjen a combodon.'],
   [7, 'Ajándékkal az ölben', 'Fogd az ajándékot az öledbe, öleld át finoman, és nézz rám!'],
+  [5, 'Piros karácsonyfagömb', 'Fogd a piros gömböt két kézzel magad előtt, nagyjából derékmagasságban, és nézz rám!'],
   [14, 'Előredőlés', 'Ülj a székre, könyökölj a térdedre, tedd az állad a két kezedre, és nézz a kamerába!'],
   [2, 'Könyöklés a háttámlán', 'Ülj fordítva a székre, tedd a két alkarod a háttámla tetejére, és pihentesd rajtuk az állad!'],
   [11, 'Támlára könyöklés', 'Állj a szék mögé, könyökölj a háttámlára, tedd az állad a kezedre, és nézz rám!'],

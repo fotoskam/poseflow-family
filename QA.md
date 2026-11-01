@@ -133,10 +133,10 @@ Mind a 20 páros kártya külön, álló 4:5 arányú WebP képfájlt használ; 
 
 ## Karácsonyi fotózás kategória — ellenőrzés
 
-- Mind a 18 kártya önálló PNG képfájlt használ.
-- A kártyák sorrendje: `1, 3, 4, 6, 7, 14, 2, 11, 12, 8, 9, 15, 10, 16, 18, 17, 20, 19`.
-- Az új kártyaszámozás 01/18-tól 18/18-ig tart; az eredeti pózszám minden fájlnévben megmaradt.
-- A 18 kép–cím–instrukció párosítást automatizált böngészőteszt ellenőrizte.
-- A teljes képernyős galéria 1/18-ról 2/18-ra helyesen léptet.
+- Mind a 19 kártya önálló PNG képfájlt használ.
+- A kártyák sorrendje: `1, 3, 4, 6, 7, 5, 14, 2, 11, 12, 8, 9, 15, 10, 16, 18, 17, 20, 19`.
+- Az új kártyaszámozás 01/19-től 19/19-ig tart; az eredeti pózszám minden fájlnévben megmaradt.
+- A 19 kép–cím–instrukció párosítást automatizált böngészőteszt ellenőrizte.
+- A teljes képernyős galéria 1/19-ről 2/19-re helyesen léptet.
 - 390 px széles mobilnézetben a kártyák egyenként, vízszintes scroll-snap lapozással jelennek meg.
-- Kategóriaváltás után a Család 40, a Párok 20, a Karácsonyi fotózás 18 kártyát mutat.
+- Kategóriaváltás után a Család 40, a Párok 20, a Karácsonyi fotózás 19 kártyát mutat.

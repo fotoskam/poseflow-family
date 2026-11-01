@@ -1,6 +1,6 @@
 # PoseFlow Family
 
-Egyszerű, keretrendszer nélküli, 78 kártyás statikus fotós instrukciógyűjtemény: 40 családi, 20 páros és 18 karácsonyi iskolai jelenettel. GitHub Pages-kompatibilis.
+Egyszerű, keretrendszer nélküli, 79 kártyás statikus fotós instrukciógyűjtemény: 40 családi, 20 páros és 19 karácsonyi iskolai jelenettel. GitHub Pages-kompatibilis.
 
 ## Használat
 
@@ -12,5 +12,5 @@ Mobilon a kártyák vízszintesen, egyesével lapozhatók. A képre koppintva te
 
 - `index.html` – oldalstruktúra
 - `styles.css` – arculat és reszponzív nézet
-- `script.js` – a 78 instrukció, a kategóriaválasztó, a szűrők és a galériavezérlés
-- `assets/` – 78 különálló, jelenethez illő kép
+- `script.js` – a 79 instrukció, a kategóriaválasztó, a szűrők és a galériavezérlés
+- `assets/` – 79 különálló, jelenethez illő kép
